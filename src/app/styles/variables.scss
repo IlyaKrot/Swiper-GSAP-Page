@@ -1,0 +1,10 @@
+:root {
+  --primary-color: #5D5FEF;
+  --secondary-color: #EF5DA8;
+  --text-color: #42567a;
+  --border-color: rgba(66, 86, 122, 0.1);
+  --active-border-color: rgba(66, 86, 122, 0.2);
+  --inactive-color: #42567A;
+  --background-color: #F4F5F9;
+  --gradient: linear-gradient(0, var(--secondary-color) 0%, var(--primary-color) 100%);
+}

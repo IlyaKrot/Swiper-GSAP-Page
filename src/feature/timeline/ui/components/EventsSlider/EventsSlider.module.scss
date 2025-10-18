@@ -1,0 +1,89 @@
+.eventsSlider {
+  position: absolute;
+  bottom: 80px;
+  left: 80px;
+  width: calc(100% - 160px);
+  opacity: 0;
+  transform: translateY(0);
+  pointer-events: none;
+}
+
+.eventsActive {
+  opacity: 1;
+  transform: translateY(-10px);
+  pointer-events: auto;
+  cursor: grab;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+
+.slideDate {
+  font-family: 'Bebas Neue';
+  font-size: 25px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.slideDescription {
+  font-size: 20px;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+.eventsNavBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  color: var(--primary-color);
+  z-index: 10;
+  box-shadow: 0 2px 16px rgba(81, 65, 218, 0.1);
+}
+
+:global(.swiper-button-disabled ) {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.eventNext {
+  right: -60px;
+}
+
+.eventPrev {
+  left: -60px;
+}
+
+@media screen and (max-width: 640px) {
+  .eventsSlider {
+    position: static;
+    width: auto;
+    margin: 20px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .slideDate {
+    font-size: 16px;
+  }
+
+  .slideDescription {
+    font-size: 14px;
+  }
+
+  .eventsNavBtn {
+    display: none;
+  }
+}

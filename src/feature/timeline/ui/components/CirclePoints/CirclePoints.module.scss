@@ -1,0 +1,147 @@
+.circle {
+  position: absolute;
+  width: 530px;
+  height: 530px;
+  min-width: 530px;
+  border-radius: 50%;
+  border: 1px solid var(--active-border-color);
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  z-index: 10;
+}
+
+.circlePoint {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--inactive-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.circlePoint .circleYear {
+  opacity: 0;
+}
+
+.circlePoint:hover {
+  border-color: var(--primary-color);
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--active-border-color);
+  background-color: var(--background-color);
+}
+
+.circlePoint:hover .circleYear {
+  opacity: 1;
+}
+
+.active {
+  border-color: var(--primary-color);
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--active-border-color);
+  background-color: var(--background-color);
+}
+
+.active .circleTitle {
+  opacity: 1;
+  visibility: visible;
+}
+
+.active .circleYear {
+  opacity: 1;
+}
+
+.circleTitle {
+  position: absolute;
+  bottom: 50%;
+  left: 150%;
+  transform: translateY(50%);
+  color: var(--inactive-color);
+  font-size: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-out;
+}
+
+.circleYear {
+  font-size: 20px;
+  color: var(--inactive-color);
+  transition: color 0.3s ease;
+}
+
+.slider {
+  position: absolute;
+  bottom: 380px;
+  left: 80px;
+}
+
+.sliderHeader {
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  position: relative;
+  z-index: 20;
+}
+
+.navigationBtn {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--active-border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  color: var(--text-color);
+  background: transparent;
+}
+
+.navigationBtn:hover {
+  background: white;
+}
+
+@media screen and (max-width: 640px) {
+  .circle {
+    display: none;
+  }
+
+  .slider {
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    transform: translateY(0);
+  }
+
+  .sliderHeader {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .navigation {
+    gap: 10px;
+    margin-top: 0;
+  }
+
+  .navigationBtn {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+}

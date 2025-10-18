@@ -1,0 +1,156 @@
+
+.timeline {
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  font-family: 'PT Sans', Arial, sans-serif;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.container::before {
+  width: 1px;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container::after {
+  width: 100%;
+  height: 1px;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+
+
+.content {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  justify-content: space-between;
+  gap: 80px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 350px;
+  position: relative;
+  color: var(--text-color);
+  pointer-events: auto;
+  padding-left: 80px;
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: var(--gradient);
+}
+
+.years {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  pointer-events: none;
+  font-size: 200px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.yearStart {
+  color: var(--primary-color);
+}
+
+.yearEnd {
+  color: var(--secondary-color);
+  margin-left: 80px;
+}
+
+@media screen and (max-width: 1280px) {
+  .years {
+    font-size: 90px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .header {
+    position: static;
+    transform: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+
+  .years {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 56px;
+    width: 100%;
+    position: static;
+    transform: none;
+  }
+
+  .yearEnd {
+    margin-left: auto;
+  }
+
+  .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: auto;
+    overflow: hidden;
+  }
+
+  .container::before,
+  .container::after {
+    display: none;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-left: 20px;
+    padding: 0;
+    margin-bottom: 0;
+    max-width: 124px;
+  }
+
+  .title::before {
+    opacity: 0;
+  }
+
+  .content {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    width: auto;
+    margin: 0 20px;
+    height: calc(100vh - 500px);
+    gap: 0;
+  }
+}
